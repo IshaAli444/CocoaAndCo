@@ -1,0 +1,361 @@
+CSS 
+
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background-color: #fff9f5;
+    color: #3e2a1c;
+    line-height: 1.6;
+    background: linear-gradient(rgba(78, 52, 46, 0.6), rgba(107, 70, 62, 0.6)), url('../images/hero.jpg') no-repeat center center/cover;
+}
+
+/* Stylish Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.0rem 3.0rem;
+    border-radius: 30px;
+    background: linear-gradient(90deg, #342420, #6d4c41);
+    color: white;
+    box-shadow: 0 8px 6px rgba(0, 0, 0, 0.3);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navbar h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+.navbar nav a {
+    margin-left: 1.5rem;
+    color: #f8e5db;
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.navbar nav a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background-color: #f8e5db;
+    bottom: -4px;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+.navbar nav a:hover {
+    color: #ffffff;
+}
+
+.navbar nav a:hover::after {
+    width: 100%;
+}
+
+/* Hero */
+.hero {
+    color: white;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-content h2 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.cta {
+    display: block;
+    margin: 2rem auto 0 auto;
+    padding: 0.75rem 2.5rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #4e342e;
+    background: linear-gradient(135deg, #d2691e, #a0522d);
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+    text-align: center;
+    text-decoration: none;
+    width: max-content;
+}
+
+.cta:hover {
+    background: linear-gradient(135deg, #a0522d, #d2691e);
+    color: #fff;
+    box-shadow: 0 8px 20px rgba(160, 82, 45, 0.7);
+    transform: translateY(-3px);
+}
+
+/* Product image hover effects */
+.product-card img {
+    width: 250px;
+    height: 180px;
+    border-radius: 12px;
+    object-fit: cover;
+    flex-shrink: 0;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    animation: float 4s ease-in-out infinite;
+    cursor: pointer;
+}
+
+.product-card img:hover {
+    transform: scale(1.08) rotate(-1.5deg);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-6px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.product-card img {
+    cursor: pointer;
+}
+
+/* ✅ New outer container that wraps the entire products section */
+.outer-products-wrapper {
+    max-width: 1000px;
+    margin: 4rem auto;
+    padding: 3rem 2rem;
+    background-color: rgba(145, 113, 92, 0.18);
+    border-radius: 25px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.842);
+    backdrop-filter: blur(30px);
+}
+
+/* Main product container inside outer wrapper */
+.main-products-container {
+    background-color: rgba(255, 255, 255, 0.139);
+    border-radius: 20px;
+    padding: 3rem;
+    max-width: 960px;
+    margin: 0 auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(10px);
+}
+
+/* Products wrapper inside the main container */
+.products-wrapper {
+    padding: 2rem 0;
+}
+
+.products-wrapper .products {
+    padding: 2rem;
+    text-align: center;
+}
+
+.products-wrapper .products h2 {
+    margin-bottom: 4rem;
+    color: #000000;
+}
+
+/* Each product card layout */
+.product-card {
+    background-color: rgba(255, 255, 255, 0.15);
+    padding: 1.5rem 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    margin-bottom: 2.5rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    color: rgb(255, 255, 255);
+    flex-wrap: wrap;
+}
+
+/* Alternating layout */
+.product-card:nth-child(odd) {
+    flex-direction: row-reverse;
+}
+
+.product-card:nth-child(even) {
+    flex-direction: row;
+}
+
+.product-card img {
+    width: 250px;
+    height: 180px;
+    border-radius: 12px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.product-content {
+    flex: 1;
+    text-align: left;
+}
+
+.product-content h3 {
+    margin-top: 0;
+    margin-bottom: 0.8rem;
+    font-size: 1.8rem;
+}
+
+.product-content p {
+    font-size: 1rem;
+    margin-bottom: 1.2rem;
+    line-height: 1.4;
+}
+
+.product-content a {
+    display: inline-block;
+    padding: 0.5rem 1.4rem;
+    background-color: #6f4e37;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.product-content a:hover {
+    background-color: #5c4033;
+}
+
+/* Browse button styling */
+.browse-btn {
+    display: block;
+    margin: 2rem auto 0 auto;
+    padding: 0.75rem 2.5rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #4e342e;
+    background: linear-gradient(135deg, #d2691e, #a0522d);
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(210, 105, 30, 0.5);
+    transition: all 0.3s ease;
+    text-align: center;
+    text-decoration: none;
+    width: max-content;
+}
+
+.browse-btn:hover {
+    background: linear-gradient(135deg, #a0522d, #d2691e);
+    color: #fff;
+    box-shadow: 0 8px 20px rgba(160, 82, 45, 0.7);
+    transform: translateY(-3px);
+}
+
+/* Footer */
+footer {
+    background-color: #4e342e;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+
+HTML
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home | Cocoa & Co</title>
+    <link rel="stylesheet" href="../css/style.css" />
+</head>
+
+<body>
+
+    <header class="navbar">
+        <h1>Cocoa & Co.</h1>
+        <nav>
+            <a href="../auth/login.html">Login</a>
+            <a href="../auth/signup.html">Sign Up</a>
+            <a href="../widget/cart.html">Cart</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Let's Bake the Day Better! 🧸♡☕✿🍰⋆｡°✩</h2>
+            <p>Handcrafted Coffee, Baked Goodies & Celebration Cakes</p>
+            <a href="#products" class="cta">What's Brewing?</a>
+        </div>
+    </section>
+
+    <section id="products" class="outer-products-wrapper">
+        <div class="main-products-container">
+            <div class="products-wrapper">
+                <div class="products">
+                    <h2>˗ˏˋ⭒ ༉‧₊˚✧ What We Serve ⭒ ༉‧₊˚✧ˎˊ˗</h2>
+                    <div class="product-grid">
+                        <div class="product-card">
+                            <img src="../images/coffee.png" alt="Coffee" />
+                            <div class="product-content">
+                                <h3>Coffee ♡☕ 𓏲🍵‧₊˚🧋𓂃𓈒𓏸</h3>
+                                <p>Freshly brewed handcrafted coffee to energize your day.</p>
+                                <a href="coffeeDisplay.html">Browse</a>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <img src="../images/baked.png" alt="Baked Goods" />
+                            <div class="product-content">
+                                <h3>Baked ♡🍪༉🥖❁🥐⋆｡°</h3>
+                                <p>Delicious baked goodies made fresh daily.</p>
+                                <a href="BakedDisplay.html">Browse</a>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <img src="../images/cake.png" alt="Cakes" />
+                            <div class="product-content">
+                                <h3>Cakes ♡🍰𖦹🧁༉🥞𓂃✧</h3>
+                                <p>Beautifully crafted celebration cakes for every occasion.</p>
+                                <a href="cakeDisplay.html">Browse</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="#" class="browse-btn">Browse All Products</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <footer>
+        <p>© 2025 Cocoa & Co. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>
